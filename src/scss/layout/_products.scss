@@ -1,0 +1,16 @@
+@use '../abstracts' as core;
+
+.products {
+  width: 90%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+
+  &__grid {
+    @include core.grid-flexible(25rem, 1.5rem);
+  }
+
+  .card {
+    @include core.flexposition(column, center, center);
+  }
+}

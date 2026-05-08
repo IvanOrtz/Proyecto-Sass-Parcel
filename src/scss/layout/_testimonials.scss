@@ -1,0 +1,19 @@
+@use '../abstracts' as core;
+
+.testimonials {
+  width: 90%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+
+  &__grid {
+    @include core.grid-flexible(28rem, 2.5rem);
+  }
+
+  .testimonial {
+    @include core.flexposition(column, center, center);
+    gap: 1.5rem;
+    padding: 3rem 2.5rem;
+    text-align: center;
+  }
+}

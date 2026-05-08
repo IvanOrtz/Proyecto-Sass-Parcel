@@ -1,0 +1,41 @@
+@use '../abstracts' as core;
+
+.feature-card {
+  background-color: core.color(blanco);
+  @include core.border_radius;
+  padding: 2rem; 
+  text-align: center;
+
+  &__icon {
+    // Estilos para el contenedor del icono (el cuadrado azul)
+    width: 64px;
+    height: 64px;
+    background-color: core.color(secondary); 
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem; // Centra el contenedor y da espacio abajo
+
+    i { 
+      font-size: 2.5rem; // Tamaño del icono
+      color: core.color(blanco); // Color blanco del icono
+    }
+  }
+
+  &__title {
+    font-family: core.$heading-font-family;
+    font-size: core.size(sm);
+    font-weight: core.weight("bold");
+    color: core.color(dark);
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    font-family: core.$font-family;
+    font-size: core.size(xs);
+    font-weight: core.weight("light");
+    color: core.color(text);
+    line-height: 1.6;
+  }
+}

@@ -1,0 +1,15 @@
+@use '../abstracts' as core;
+
+.nav {
+  @include core.navigation();
+
+  &__list {
+    @include core.flexposition(column, center, center);
+  }
+
+  @include core.media(medium) {
+    &__list {
+      @include core.flexposition(row, flex-end, center);
+    }
+  }
+}

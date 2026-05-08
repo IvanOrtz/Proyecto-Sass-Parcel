@@ -1,0 +1,67 @@
+@use '../abstracts' as core;
+
+.footer {
+  padding: 4rem 2rem 0;
+
+  &__top {
+    @include core.flexposition(column, center, center);
+    flex-wrap: wrap;
+    gap: 3rem;
+    max-width: 110rem;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+  }
+
+  &__brand {
+    flex: 1 1 15rem;
+  }
+
+  &__logo {
+    height: 8rem;
+    width: 8rem;
+    margin-bottom: 1rem;
+  }
+
+  &__nav {
+    flex: 1 1 12rem;
+  }
+
+  &__nav-list {
+    @include core.reset-list;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__nav-link {
+    text-decoration: none;
+  }
+
+  &__social-list {
+    @include core.reset-list;
+    @include core.flexposition(row, flex-start, center);
+    gap: 1rem;
+  }
+
+  &__social-link {
+    @include core.flexposition(row, center, center);
+    width: 3.5rem;
+    height: 3.5rem;
+
+    i {
+      font-size: 1.6rem;
+      color: core.color(blanco);
+    }
+  }
+
+  &__bottom {
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  @include core.media(medium) {
+    &__top {
+      @include core.flexposition(row, space-between, flex-start);
+    }
+  }
+}

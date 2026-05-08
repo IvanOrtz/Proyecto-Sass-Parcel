@@ -1,0 +1,22 @@
+@use '../abstracts' as core;
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: core.color(primary);
+  color: core.color(blanco);
+  @include core.border_radius;
+  text-align: center;
+  transition: all 0.3s;
+  font-family: core.$font-family;
+  font-size: core.size(xs);
+  font-weight: core.weight("regular");
+  border: 2px solid core.color(primary);
+
+  &:hover {
+    background-color: core.color(primary-m);
+    text-decoration: none;
+    opacity: 1;
+  
+  }
+}

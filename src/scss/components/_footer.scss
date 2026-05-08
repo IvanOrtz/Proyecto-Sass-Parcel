@@ -1,0 +1,53 @@
+@use '../abstracts' as core;
+
+.footer {
+  background-color: core.color(negro);
+  color: core.color(blanco);
+
+  &__brand-text {
+    font-family: core.$font-family;
+    font-size: core.size(xs);
+    font-weight: core.weight("light");
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+  }
+
+  &__nav-title {
+    font-family: core.$font-family;
+    font-size: core.size(xs);
+    font-weight: core.weight("bold");
+    color: core.color(secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+  }
+
+  &__nav-link {
+    font-family: core.$font-family;
+    font-size: core.size(xs);
+    font-weight: core.weight("light");
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s;
+
+    &:hover { color: core.color(blanco); text-decoration: none; }
+  }
+
+  &__social-link {
+    border-radius: 50%;
+    background-color: core.color(gris);
+    transition: all 0.3s;
+
+    &:hover { background-color: core.color(primary); }
+  }
+
+  &__bottom {
+    border-top: core.get-border(1) solid core.color(gris);
+  }
+
+  &__copy {
+    font-family: core.$font-family;
+    font-size: core.size(xs);
+    font-weight: core.weight("light");
+    color: rgba(255, 255, 255, 0.5);
+  }
+}

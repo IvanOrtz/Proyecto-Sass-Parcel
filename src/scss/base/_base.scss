@@ -1,0 +1,37 @@
+@use '../abstracts' as core;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  background-color: core.color(light);
+}
+
+body {
+  font-family: core.$font-family;
+  color: core.color(dark);
+  line-height: 1.5;
+}
+
+@include core.cabeceras;
+
+a {
+  text-decoration: none;
+  color: core.color(primary);
+  transition: all 0.3s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

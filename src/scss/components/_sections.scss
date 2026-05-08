@@ -1,0 +1,10 @@
+@use '../abstracts' as core;
+
+// Fondos de sección
+.features {
+  background-color: core.color(light);
+}
+
+.contact {
+  background-color: core.color(light);
+}

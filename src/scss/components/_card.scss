@@ -1,0 +1,70 @@
+@use '../abstracts' as core;
+
+.card {
+  padding: 2rem;
+  align-items: center;
+  gap: 2rem;
+  color: core.color(dark);
+  @include core.border_radius;
+  background-color: core.color(blanco);
+
+  &--featured {
+  position: relative; // Asegura que el badge se posicione respecto a la card
+
+  &::before {
+    content: "DESTACADO";
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: core.color(rojo);
+    color: core.color(blanco);
+    font-size: 1rem;
+    font-weight: core.weight("bold");
+    padding: 0.4rem 1rem;
+    border-radius: 2rem; // Forma de píldora
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+}
+
+  &__media {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    background-color: core.color(blanco);
+  }
+
+  img {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    background-color: core.color(blanco);
+  }
+
+  &__content {
+    h2 {
+      font-family: core.$heading-font-family;
+      font-size: core.size(sm);
+      font-weight: core.weight("bold");
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-family: core.$font-family;
+      font-size: core.size(xs);
+      font-weight: core.weight("light");
+      line-height: 1.5;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: core.size(xs);
+    font-family: core.$font-family;
+    color: core.color(primary);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

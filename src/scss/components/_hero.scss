@@ -1,0 +1,29 @@
+@use '../abstracts' as core;
+
+.hero {
+  background: linear-gradient(135deg, core.color(primary), core.color(rojo));
+
+  &__title {
+    font-family: core.$heading-font-family;
+    font-size: core.size(xl);
+    font-weight: core.weight("bold");
+    color: core.color(blanco);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+
+  &__subtitle {
+    font-family: core.$font-family;
+    font-size: core.size(sm);
+    font-weight: core.weight("light");
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    margin-bottom: 3rem;
+  }
+
+  @include core.media(medium) {
+    &__title {
+      font-size: core.size(xxl);
+    }
+  }
+}

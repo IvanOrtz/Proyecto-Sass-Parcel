@@ -1,0 +1,96 @@
+//// Proyecto: Plantilla Sass Landing Page
+@use "sass:map";
+@use "sass:list";
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,700|Montserrat:400,700,800";
+
+// ------------------------------
+// Lista de bordes disponibles
+// ------------------------------
+$borders: (1px, 2px, 5px, 10px);
+
+@function get-border($index) {
+  @if $index > list.length($borders) or $index <= 0 {
+    @error "Índice no existe. La lista solo tiene #{list.length($borders)} elementos.";
+  }
+  @return list.nth($borders, $index);
+}
+
+/// Paleta de colores del proyecto
+/// @group Colores
+/// @type Map
+$colors: (
+  primary:     #2563eb,
+  primary-m:   rgba(37, 99, 235, 0.14),
+  secondary:   #22c55e,
+  dark:        #111827,
+  light:       #f8fafc,
+  blanco:      #ffffff,
+  gris:        #94a3b8,
+  negro:       #020617,
+  text:        #475569,
+  border:      #e2e8f0,
+  rojo:        #ef4444,
+);
+
+
+
+/// Obtiene un color del mapa $colors
+/// @group Colores
+/// @param {String} $name - Nombre del color definido en el mapa $colors
+/// @return {Color} Valor del color
+@function color($name) {
+  @if map.has-key($colors, $name) {
+    @return map.get($colors, $name);
+  } @else {
+    @error "El color '#{$name}' no existe en el mapa $colors.";
+  }
+}
+
+
+
+/// Tamaños de fuente disponibles
+/// @group Tipografía
+/// @type Map
+$font-sizes: (
+  xxl: 6rem,
+  xl:  3rem,
+  lg:  2.5rem,
+  sm:  1.8rem,
+  xs:  1.6rem,
+);
+
+/// Obtiene un tamaño de fuente específico
+/// @group Tipografía
+/// @param {String} $size - Clave del tamaño (xs, sm, md, lg, xl, xxl)
+/// @return {Number} Valor en rem
+@function size($size) {
+  @return map.get($font-sizes, $size);
+}
+
+/// Pesos de fuente disponibles
+/// @group Tipografía
+/// @type Map
+$font-weights: (
+  "light":   300,
+  "regular": 400,
+  "bold":    700,
+);
+
+/// Obtiene el peso de fuente numérico
+/// @group Tipografía
+/// @param {String} $weight - Nombre del peso (light, regular, bold)
+/// @return {Number} Valor numérico del peso
+@function weight($weight) {
+  @return map.get($font-weights, $weight);
+}
+
+/// Familia de fuente principal del sitio
+/// @group Tipografía
+/// @type String
+$font-family: 'Poppins', sans-serif;
+
+/// Familia de fuente para encabezados y titulares
+/// @group Tipografía
+/// @type String
+$heading-font-family: 'Montserrat', sans-serif;

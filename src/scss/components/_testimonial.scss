@@ -1,0 +1,48 @@
+@use '../abstracts' as core;
+
+.testimonial {
+  background-color: core.color(blanco);
+  @include core.border_radius;
+
+  &--featured {
+    background-color: core.color(primary);
+
+    .testimonial__text,
+    .testimonial__role { color: rgba(255, 255, 255, 0.85); }
+    .testimonial__name { color: core.color(blanco); }
+  }
+
+  &__avatar {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img { width: 100%; height: 100%; object-fit: cover; }
+  }
+
+  &__quote { margin: 0; padding: 0; }
+
+  &__text {
+    font-family: core.$font-family;
+    font-size: core.size(xs);
+    font-weight: core.weight("light");
+    font-style: italic;
+    color: core.color(text);
+    line-height: 1.7;
+  }
+
+  &__name {
+    font-family: core.$font-family;
+    font-size: core.size(xs);
+    font-weight: core.weight("bold");
+    color: core.color(dark);
+  }
+
+  &__role {
+    font-family: core.$font-family;
+    font-size: core.size(xs);
+    font-weight: core.weight("light");
+    color: core.color(gris);
+  }
+}

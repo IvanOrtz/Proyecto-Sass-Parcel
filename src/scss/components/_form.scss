@@ -1,0 +1,64 @@
+@use '../abstracts' as core;
+
+.contact {
+  &__info {
+    h3 {
+      font-family: core.$font-family;
+      font-size: core.size(lg);
+      font-weight: core.weight("bold");
+      color: core.color(primary);
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-family: core.$font-family;
+      font-size: core.size(xs);
+      font-weight: core.weight("light");
+      color: core.color(text);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+  }
+
+  &__detail {
+    font-family: core.$font-family;
+    font-size: core.size(xs);
+  }
+
+  &__detail-label {
+    font-weight: core.weight("bold");
+    color: core.color(primary);
+  }
+
+  &__detail-value {
+    font-weight: core.weight("light");
+    color: core.color(text);
+  }
+
+  &__form {
+    background-color: core.color(blanco);
+    @include core.border_radius;
+  }
+}
+
+.form-group {
+  &__label {
+    font-family: core.$font-family;
+    font-size: core.size(xs);
+    font-weight: core.weight("bold");
+    color: core.color(dark);
+  }
+
+  &__input,
+  &__textarea {
+    font-family: core.$font-family;
+    font-size: core.size(xs);
+    color: core.color(dark);
+    border: core.get-border(2) solid core.color(border);
+    border-radius: 0.5rem;
+    transition: all 0.3s;
+    background-color: core.color(blanco);
+
+    &:focus { border-color: core.color(primary); }
+  }
+}

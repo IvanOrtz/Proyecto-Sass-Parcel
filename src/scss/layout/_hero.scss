@@ -1,0 +1,39 @@
+@use '../abstracts' as core;
+
+.hero {
+  @include core.flexposition(column, center, center);
+  flex-wrap: wrap;
+  gap: 4rem;
+  min-height: 50rem;
+  padding: 6rem 4rem;
+
+  &__content {
+    flex: 1 1 40rem;
+    max-width: 60rem;
+    text-align: center;
+  }
+
+  &__actions {
+    @include core.flexposition(row, center, center);
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  &__image {
+    flex: 1 1 30rem;
+    max-width: 40rem;
+    @include core.flexposition(row, center, center);
+  }
+
+  @include core.media(medium) {
+    @include core.flexposition(row, center, center);
+
+    &__content {
+      text-align: left;
+    }
+
+    &__actions {
+      justify-content: flex-start;
+    }
+  }
+}

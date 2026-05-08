@@ -1,0 +1,61 @@
+@use '../abstracts' as core;
+
+.contact {
+  width: 90%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+
+  &__wrapper {
+    @include core.flexposition(row, flex-start, flex-start);
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+
+  &__info {
+    flex: 1 1 28rem;
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__detail {
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  &__detail-label {
+    min-width: 8rem;
+  }
+
+  &__form {
+    flex: 2 1 36rem;
+    @include core.flexposition(column, flex-start, stretch);
+    gap: 2rem;
+    padding: 3rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+
+    &__input,
+    &__textarea {
+      width: 100%;
+      padding: 1.2rem 1.6rem;
+      outline: none;
+    }
+
+    &__textarea {
+      resize: vertical;
+      min-height: 12rem;
+    }
+  }
+}
