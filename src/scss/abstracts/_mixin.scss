@@ -6,7 +6,7 @@
 /// Reset de listas
 /// @group Resets
 /// @example scss
-///   .nav-list {
+///   .footer__nav-list {
 ///     @include reset-list;
 ///   }
 /// ------------------------------
@@ -46,9 +46,9 @@ $sizes: (
 /// @group Responsive
 /// @param {String} $clave - Nombre del breakpoint
 /// @example scss
-///   .container {
+///   .hero {
 ///     @include media(medium) {
-///       padding: 2rem;
+///       @include flexposition(row, center, center);
 ///     }
 ///   }
 /// ------------------------------
@@ -71,7 +71,7 @@ $sizes: (
 /// @param {String} $justifycontent [center]
 /// @param {String} $alignitem [center]
 /// @example scss
-///   .footer {
+///   .hero {
 ///     @include flexposition(column, center, center);
 ///   }
 /// ------------------------------
@@ -90,7 +90,7 @@ $sizes: (
 /// Layout principal basado en Grid
 /// @group Layout
 /// @example scss
-///   .layout {
+///   .header {
 ///     @include layout-basico;
 ///   }
 /// ------------------------------
@@ -114,8 +114,8 @@ $sizes: (
 /// @param {Number} $min-size [18rem]
 /// @param {Number} $gap [1.5rem]
 /// @example scss
-///   .products-list {
-///     @include grid-flexible(18rem, 1.5rem);
+///   .products__grid {
+///     @include grid-flexible(25rem, 1.5rem);
 ///   }
 /// ------------------------------
 @mixin grid-flexible($min-size: 18rem, $gap: 1.5rem) {
@@ -160,9 +160,7 @@ $sizes: (
 /// Cabeceras dinámicas
 /// @group Tipografía
 /// @example scss
-///   .content {
-///     @include cabeceras;
-///   }
+///   @include cabeceras;
 /// ------------------------------
 @mixin cabeceras {
   @for $i from 1 through 3 {
